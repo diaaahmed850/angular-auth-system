@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <app-navbar></app-navbar>
+      <!-- If Use Routing for SPA in Angular We Must Put router-oulet so he handle all routes
+            - Note : 
+                - Don't Forget to Use ( routerLink ) instead of href in the Navbar
+         --> 
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+
+    <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+    <!-- We Use Again Function isLoggedIn() and Based on what it returns I show or hide links in navbar -->
+        <!-- Note -->
+          <!-- We Use ng-template because it's an element of angular that doesn't take any space in html content --> 
+    <ng-template [ngIf]="!all.isLoggedIn()">
+      <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+    </ng-template>
+    <ng-template [ngIf]="all.isLoggedIn()">
+      <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+      <li routerLinkActive="active"><a routerLink="/home" (click)="logout()">Logout</a></li>
+    </ng-template>
+  </ul>
+</div>

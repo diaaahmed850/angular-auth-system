@@ -1,0 +1,23 @@
+input {
+    margin-bottom: 10px;
+
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid rgb(231 , 70 , 67);
+
+}
+input.ng-valid.ng-touched { 
+
+    border: 1px solid rgb(42 , 235 , 110);
+
+
+}
+
+
+
+button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+}

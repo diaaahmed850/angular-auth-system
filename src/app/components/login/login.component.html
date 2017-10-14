@@ -1,0 +1,36 @@
+<form (ngSubmit)="submitForm(f)" #f="ngForm" class="form-group">
+
+
+  <input type="text" name="username" class="form-control"
+  ngModel
+  required
+  placeholder="Username"
+  #username="ngModel"
+  >
+
+  <!-- Alert Errors For Validations -->
+  <div class="alert alert-danger text-center" *ngIf="!username.valid && username.touched">
+
+    <!-- We Use ng-template because it's an element of angular that doesn't take any space in html content --> 
+    <ng-template [ngIf]="username.errors.required">Username Is Required</ng-template>
+  </div>
+
+
+
+  <input type="password" name="password"
+   ngModel
+   #password="ngModel"
+   required
+   class="form-control"
+   placeholder="Password"
+   >
+  <!-- Alert Errors For Validations -->
+  <div class="alert alert-danger text-center" *ngIf="!password.valid && password.touched">
+    
+    <!-- We Use ng-template because it's an element of angular that doesn't take any space in html content --> 
+    <ng-template [ngIf]="password.errors.required">Password Is Required</ng-template>
+  </div>
+
+
+   <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
+</form>
